@@ -1,1 +1,38 @@
-Assumptions:
+Name: Matthew Louis Ayoob
+Role: Wireless System Simulation SWE Intern
+Take Home Question Commentary
+
+Assumptions + Justifications
+
+All drones are the same model with the same respective dimensions. 
+It was not clarified if N or r were arrays of different values to represent different cohorts of drones with different dimensions. Therefore, I assumed that there were not different types of drones to represent: all drones within our project scope have the same radius. 
+Placing drones in a rectangular pattern was the most technically feasible. 
+Because I was not given a metric to represent the drones ability to land precisely, I chose to place drones in a rectangular fashion as opposed to a triangular pattern. (See Below)
+
+(N = 4 drones placed) vs. (N = 3)
+
+Although we can see the triangular pattern can hold more drones in the example below, I did not think that the drones were likely accurate enough, especially with external factors like weather, for the situation we are likely modeling. 
+
+(N = 225) vs. (N = 247)
+
+The pop() method sufficiently models randomization 
+I used the pop() method to remove a random coordinate from the possible landing points set. I considered using the random module, but I knew the pop method was built into Python already, although likely pseudorandom. 
+	
+
+Runtime
+
+O(N + (L^2) / (r^2) ) 
+
+create_map() is called initially. It first creates a set of all the x-coordinates and y-coordinates and then matches them in a nested for loop. Therefore, a factor of the runtime with constants abstracted away is  (L^2) / (r^2) or (L/r) squared, with (L/r) representing the amount of iterations for finding each set of coordinates. It finds how many diameters fit into the square side length. Additionally, in worst case, from an iteration standpoint, the main driver drone_simulator()will run the for loop for each drone to land. Therefore, O(N) is added onto the runtime. 
+
+Testing
+
+	In the code file, you can see 4 asserts to test correct coordinates, scalability/robustness, and correct Success/Failure behavior. In addition, for viewing outputs, there are the test cases at the bottom. https://www.engineeringtoolbox.com/circles-within-rectangle-d_1905.html was helpful for sanity checking my test case numbers. 
+
+Moving Forward
+
+	If this was an internship setting, I would look to my manager for guidance on analyzing the runtime and optimization tips. I believe some of my approach is intuitive to follow; however, it is at the cost of time and space complexity. This is also due to my time constraint of 4 hours. Additionally, my first questions would have been about my assumptions, especially the pattern of landing of drones (triangular vs. rectangular as discussed above). 
+
+Closing Thoughts
+
+	Thank you so much for the opportunity to do this take-home assignment: I enjoyed working on it. I really hope to work for your team at Apple this summer. I am so excited at the possibility to further myself as an engineer by learning from such experienced and talented people (you and your team). Please let me know if you need any additional information regarding my candidacy. 
