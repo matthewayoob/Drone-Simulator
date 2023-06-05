@@ -1,7 +1,6 @@
 # Name: Matthew Louis Ayoob
 
 # Takehome question
-# * Maximum hours to use is 4.
 # * Make reasonable assumptions and state them explicitly.
 
 # Drone Placement
